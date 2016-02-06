@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">Mauk\'s HelloWorld</string>
+
+    <string name="hello_world">Hello World!</string>
+    <string name="hello_switch">Hello Again!!</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="button_1_text">You Clicked</string>
+
+</resources>

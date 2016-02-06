@@ -1,0 +1,38 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flickr="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mauk.app.flickrbrowser.MainActivity">
+
+    <item
+        android:id="@+id/action_exit"
+        android:orderInCategory="100"
+        android:title="@string/action_exit"
+        flickr:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_log_out"
+        android:orderInCategory="10"
+        android:title="@string/log_out_label"
+        flickr:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_edit_friends"
+        android:orderInCategory="2"
+        android:title="@string/edit_friends_label"
+        flickr:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_camera"
+        android:orderInCategory="2"
+        android:title="@string/action_camera_label"
+        android:icon="@android:drawable/ic_menu_camera"
+        flickr:showAsAction="ifRoom"
+        />
+
+
+
+</menu>

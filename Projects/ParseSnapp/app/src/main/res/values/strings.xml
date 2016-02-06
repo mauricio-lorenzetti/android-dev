@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">ParseSnapp</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_label">Login</string>
+    <string name="sign_up_text">Sign Up</string>
+    <string name="email_hint">Email Address</string>
+    <string name="sign_up_button_label">Sign Up</string>
+    <string name="sign_up_error_message">Fill all the fields</string>
+    <string name="sign_up_error_title">Oops!</string>
+    <string name="login_error_message">Fill all the fields</string>
+    <string name="login_error_title">Oops!</string>
+    <string name="settings_label">Settings</string>
+    <string name="log_out_label">Log Out</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="inbox_label">Inbox</string>
+    <string name="friends_label">Friends</string>
+    <string name="empty_inbox_label">No New Messages!</string>
+    <string name="empty_friends_label">Add friends to begin!</string>
+    <string name="edit_friends_label">Edit Friends</string>
+    <string name="error_title">We\'re sorry!</string>
+    <string name="facebook_app_id">1515956995385581</string>
+    <string name="link_facebook_label">Link Facebook</string>
+    <string name="facebook_login_label">Facebook Login</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_camera_label">Camera</string>
+    <string name="error_external_storage">Problem acessing external storage</string>
+    <string name="error_creating_directory">Failed to create directory</string>
+    <string name="error_general">Sorry, there was an error!</string>
+    <string name="warning_video_size">Maximum size: 10 MB</string>
+    <string name="error_file_open">There was a problem with the selected file</string>
+    <string name="error_file_size">File too large</string>
+    <string name="empty_recipients_message">Add some friends first!</string>
+    <string name="action_send">Send</string>
+    <string name="error_selecting_file">There was an error with the selected file. Try again!</string>
+    <string name="upload_success">Message sent!</string>
+    <string name="error_uploading_file">There was an error uploading the message. Try again.</string>
+    <string-array name="camera_choices">
+        <item>Take Picture</item>
+        <item>Take Video</item>
+        <item>Choose Picture</item>
+        <item>Choose Video</item>
+    </string-array>
+</resources>

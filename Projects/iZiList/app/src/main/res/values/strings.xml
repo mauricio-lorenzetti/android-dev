@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">iZiList</string>
+    <string name="facebook_app_id">1075086232532336</string>
+    <string name="username_hint">username or email</string>
+    <string name="password_hint">password</string>
+    <string name="login_button_label">LOGIN</string>
+    <string name="facebook_login_label">Login With Facebook</string>
+    <string name="sign_up_text">Sign Up</string>
+    <string name="email_hint">email</string>
+    <string name="sign_up_button_label">SIGN UP</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="action_logout_label">Log Out</string>
+    <string name="action_refresh">Refresh</string>
+</resources>
