@@ -19,6 +19,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected EditText passwordTxt;
     protected EditText emailTxt;
     protected Button signUpBtn;
+    protected Button cancelBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,16 @@ public class SignUpActivity extends AppCompatActivity {
         usernameTxt = (EditText) findViewById(R.id.username_text);
         passwordTxt = (EditText) findViewById(R.id.password_text);
         emailTxt = (EditText) findViewById(R.id.email_text);
+
+        cancelBtn =  (Button) findViewById(R.id.cancel_button);
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     finish();
+                 }
+             }
+        );
+
         signUpBtn = (Button) findViewById(R.id.sign_up_button);
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +84,5 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }

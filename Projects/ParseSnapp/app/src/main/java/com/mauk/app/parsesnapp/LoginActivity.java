@@ -22,11 +22,12 @@ import java.util.List;
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
+
     protected EditText usernameTxt;
     protected EditText passwordTxt;
     protected Button loginBtn;
     protected Button FBloginBtn;
-    protected TextView signUpText;
+    protected TextView signUpTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        signUpText = (TextView) findViewById(R.id.sign_up_text);
-        signUpText.setOnClickListener(new View.OnClickListener() {
+        signUpTxt = (TextView) findViewById(R.id.sign_up_text);
+        signUpTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
@@ -96,7 +97,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (user.isNew()) {
                                 Log.v(TAG, "New User");
                             }
-                            Log.v(TAG, "Logged");
+                            Log.v(TAG, "Logged In");
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

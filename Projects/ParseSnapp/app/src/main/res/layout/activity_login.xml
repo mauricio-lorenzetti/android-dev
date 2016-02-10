@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context="com.mauk.app.parsesnapp.LoginActivity">
+    tools:context="com.mauk.app.parsesnapp.LoginActivity"
+    style="@style/AuthBackground">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/username_hint"
-        android:id="@+id/username_text"/>
+    <include layout="@layout/auth_common_bg" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="@string/password_hint"
-        android:id="@+id/password_text"
-        android:layout_below="@+id/username_text"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/login_button_label"
-        android:id="@+id/login_button"
-        android:layout_below="@+id/password_text"/>
-
-    <Button
-        android:id="@+id/facebook_login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="30dp"
-        android:padding="15dp"
-        android:text="@string/facebook_login_label"
-        android:background="#3b5998"
-        android:textColor="#ffffff" />
-
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/login_button">
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/auth_common_title" />
+
+        <LinearLayout
+            style="@style/AuthFieldContainer">
+
+            <EditText
+                android:id="@+id/username_text"
+                android:hint="@string/username_hint"
+                style="@style/AuthEditText">
+                <requestFocus/>
+            </EditText>
+
+            <EditText
+                android:id="@+id/password_text"
+                android:inputType="textPassword"
+                android:hint="@string/password_hint"
+                style="@style/AuthEditText" />
+
+        </LinearLayout>
+
+        <Button
+            android:text="@string/login_button_label"
+            android:id="@+id/login_button"
+            style="@style/AuthButton" />
+
+        <Button
+            android:id="@+id/facebook_login_button"
+            android:text="@string/facebook_login_label"
+            android:background="#3b5998"
+            android:textColor="#ffffff"
+            style="@style/AuthButton"/>
 
         <TextView
             android:id="@+id/sign_up_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sign_up_text"
+            android:layout_margin="6dp"
             android:layout_gravity="center"
-            android:textSize="18sp"
-            />
+            android:textSize="15sp"
+            android:textColor="@android:color/white"/>
 
-    </FrameLayout>
+    </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

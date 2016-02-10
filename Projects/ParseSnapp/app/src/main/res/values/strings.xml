@@ -2,8 +2,8 @@
     <string name="app_name">ParseSnapp</string>
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>
-    <string name="login_button_label">Login</string>
-    <string name="sign_up_text">Sign Up</string>
+    <string name="login_button_label">Sign in</string>
+    <string name="sign_up_text">Don\'t have an account yet? Sign Up!</string>
     <string name="email_hint">Email Address</string>
     <string name="sign_up_button_label">Sign Up</string>
     <string name="sign_up_error_message">Fill all the fields</string>
@@ -35,6 +35,10 @@
     <string name="error_selecting_file">There was an error with the selected file. Try again!</string>
     <string name="upload_success">Message sent!</string>
     <string name="error_uploading_file">There was an error uploading the message. Try again.</string>
+    <string name="content_description_background">ParseSnapp Frog BG Image</string>
+    <string name="loginSubtitle">A Mauk\'s Project</string>
+    <string name="cancel_button_label">Cancel</string>
+    <string name="content_desc_button_divider">Button divider</string>
     <string-array name="camera_choices">
         <item>Take Picture</item>
         <item>Take Video</item>
