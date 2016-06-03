@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="DetailsFieldTitle">
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_marginLeft">-10dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:text">@string/test_string</item>
+    </style>
+
 </resources>

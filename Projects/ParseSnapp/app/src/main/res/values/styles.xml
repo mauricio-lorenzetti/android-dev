@@ -2,6 +2,23 @@
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
+        <item name="android:actionOverflowButtonStyle">@style/AppTheme.Overflow</item>
+        <item name="android:listViewStyle">@style/LightPurpleBG</item>
+        <item name="android:gridViewStyle">@style/LightPurpleBG.GridView</item>
+    </style>
+
+    <style name="LightPurpleBG">
+        <item name="android:background">@color/light_purple_bg</item>
+        <item name="android:divider">@null</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <style name="LightPurpleBG.GridView">
+        <item name="android:padding">@dimen/user_grid_spacing</item>
+    </style>
+
+    <style name="AppTheme.Overflow" parent="@android:style/Widget.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_menu_overflow</item>
     </style>
 
     <style name="AuthBackground">
@@ -64,6 +81,24 @@
         <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
         <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
 
+    </style>
+
+    <style name="ToolBarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:background">@color/toolbar_bg</item>
+        <item name="android:backgroundStacked">@color/toolbar_stacked</item>
+        <item name="android:textColorPrimary">@color/text_color</item>
+        <item name="android:textColorSecondary">@android:color/darker_gray</item>
+    </style>
+
+    <style name="ToolbarThemeTitle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="GridImage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
     </style>
 
 </resources>

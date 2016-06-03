@@ -2,13 +2,15 @@
 <android.support.v7.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorPrimaryDark"
-    android:id="@+id/toolbar"
+    android:id="@+id/tool_bar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:elevation="4dp"
-    android:theme="@style/Theme.AppCompat.Light"
-    app:popupTheme="@style/Theme.AppCompat.Light"
+    android:titleTextStyle="@style/ToolbarThemeTitle"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    android:theme="@style/ToolBarTheme"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     >
 
     <ProgressBar

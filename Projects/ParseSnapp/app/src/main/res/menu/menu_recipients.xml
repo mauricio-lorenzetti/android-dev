@@ -9,9 +9,8 @@
         android:id="@+id/action_send"
         android:orderInCategory="1"
         android:title="@string/action_send"
-        android:icon="@android:drawable/ic_menu_send"
+        android:icon="@drawable/ic_menu_send"
         flickr:showAsAction="always"
-        android:visible="false"
         />
 
 </menu>

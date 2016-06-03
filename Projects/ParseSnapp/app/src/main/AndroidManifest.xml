@@ -7,12 +7,20 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission android:protectionLevel="signature"
+        android:name="com.parse.starter.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.mauk.app.parsesnapp.permission.C2D_MESSAGE" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
 
     <application
-        android:name=".ParseSnappApplication"
+        android:name=".utils.ParseSnappApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,6 +29,12 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="peXrHbwznK23U2pESdnt2G4tDbF9OoFPP06MSlEP" />
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="q5by2OX5cQI6mFPkwJ55kfulMtDb4kKzf6xpXRYc" />
 
         <activity
             android:name="com.facebook.FacebookActivity"
@@ -28,7 +42,7 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,38 +51,61 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.LoginActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".SignUpActivity"
-            android:parentActivityName=".LoginActivity"
+            android:name=".ui.SignUpActivity"
+            android:parentActivityName=".ui.LoginActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".EditFriendsActivity"
-            android:parentActivityName=".MainActivity"
+            android:name=".ui.EditFriendsActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mauk.app.parsesnapp.MainActivity" />
+                android:value=".ui.MainActivity" />
         </activity>
         <activity
-            android:name=".RecipientsActivity"
-            android:parentActivityName=".MainActivity"
+            android:name=".ui.RecipientsActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mauk.app.parsesnapp.MainActivity" />
+                android:value=".ui.MainActivity" />
         </activity>
         <activity
-            android:name=".ViewImageActivity"
-            android:parentActivityName=".MainActivity"
+            android:name=".ui.ViewImageActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mauk.app.parsesnapp.MainActivity" />
+                android:value=".ui.MainActivity" />
         </activity>
+
+        <service android:name="com.parse.PushService" />
+
+        <receiver android:name="com.parse.ParsePushBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.mauk.app.parsesnapp" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/ic_push_notification"/>
+
     </application>
 
 </manifest>

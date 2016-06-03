@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mauk.app.parsesnapp.LoginActivity"
+    tools:context=".ui.LoginActivity"
     style="@style/AuthBackground">
 
     <include layout="@layout/auth_common_bg" />

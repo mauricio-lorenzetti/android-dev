@@ -32,9 +32,7 @@ public class LoginActivity extends BaseActivity {
         @Override
         public void done(ParseUser user, ParseException e) {
             if (user != null) {
-                if (user.isNew()) {
-                    Log.v(TAG, "New User");
-                }
+                MainApplication.updateParseInstalation(ParseUser.getCurrentUser());
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

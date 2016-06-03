@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
     <color name="backgroundPurple">#5D3E85</color>
     <color name="apptheme_color">#61408c</color>
     <color name="light_gray">#BBBBBB</color>
@@ -10,5 +7,18 @@
     <color name="pressed_purple_button">#ba9dda</color>
     <color name="focused_purple_button">#d6c3ed</color>
     <color name="text_color">#250054</color>
+
+    <color name="toolbar_bg">#FFFFFF</color>
+    <color name="toolbar_stacked">#6A4B95</color>
+    <color name="tab_indicator_color">#4A2B70</color>
+    <color name="toolbar_focus_pressesd">#BA9DDA</color>
+
+
+    <color name="light_purple_bg">#E9E4ED</color>
+
+    <color name="swipeRefresh1">#482c6f</color>
+    <color name="swipeRefresh2">#ad78d9</color>
+    <color name="swipeRefresh3">#dcadf4</color>
+    <color name="swipeRefresh4">#ad78d9</color>
 
 </resources>

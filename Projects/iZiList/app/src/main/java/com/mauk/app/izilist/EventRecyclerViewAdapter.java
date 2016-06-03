@@ -1,13 +1,23 @@
 package com.mauk.app.izilist;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SyncStatusObserver;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -36,8 +46,14 @@ public class EventRecyclerViewAdapter extends RecyclerView.Adapter<EventRecycler
 
     @Override
     public void onBindViewHolder(SingleEventHolder holder, int position) {
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         holder.title.setText(events.get(position).getTitle());
         holder.hostname.setText(events.get(position).getHostname());
+        holder.date.setText(events.get(position).getDate() != null ? df.format(events.get(position).getDate()) : null);
+        if (events.get(position).getLogoUri() != null)
+            Picasso.with(context).load(Uri.parse(events.get(position).getLogoUri())).transform(new CircleTransform()).into(holder.logoImage);
+        if (events.get(position).getImageUri() != null){}
+            Picasso.with(context).load(Uri.parse(events.get(position).getImageUri())).into(holder.mainImage);
     }
 
     @Override
@@ -59,13 +75,19 @@ public class EventRecyclerViewAdapter extends RecyclerView.Adapter<EventRecycler
 
         public TextView hostname;
         public TextView title;
+        public TextView date;
+        public ImageView logoImage;
+        public ImageView mainImage;
         private Context context;
 
         public SingleEventHolder(Context context, View itemView) {
             super(itemView);
+            this.context = context;
             title = (TextView) itemView.findViewById(R.id.title);
             hostname = (TextView) itemView.findViewById(R.id.hostname);
-            this.context = context;
+            date = (TextView) itemView.findViewById(R.id.date);
+            logoImage = (ImageView) itemView.findViewById(R.id.logo_image);
+            mainImage = (ImageView) itemView.findViewById(R.id.main_image);
             itemView.setOnClickListener(this);
         }
 
@@ -74,7 +96,8 @@ public class EventRecyclerViewAdapter extends RecyclerView.Adapter<EventRecycler
             int position = getLayoutPosition();
             Intent intent = new Intent(context, EventDetailsActivity.class);
             intent.putExtra("SINGLE_EVENT_OBJECT", events.get(position));
-            context.startActivity(intent);
+            intent.putExtra("EVENT_OBJECT_POSITION", position);
+            ((Activity) context).startActivityForResult(intent, MainActivity.UPDATE_EVENT);
         }
     }
 }

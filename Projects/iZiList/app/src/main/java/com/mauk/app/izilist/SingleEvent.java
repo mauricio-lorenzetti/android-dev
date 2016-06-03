@@ -16,16 +16,22 @@ public class SingleEvent implements Serializable {
     private String address;
     private Date date;
     private String description;
+    private String price;
     private String imageUri;
+    private String logoUri;
+    private Boolean amIguest;
 
-    public SingleEvent(String id, String title, String hostname, String address, Date date, String description, String imageUri) {
+    public SingleEvent(String id, String title, String hostname, String address, Date date, String description, String price, String imageUri, String logoUri, Boolean amIguest) {
         this.id = id;
         this.title = title;
         this.hostname = hostname;
         this.address = address;
         this.date = date;
         this.description = description;
+        this.price = price;
         this.imageUri = imageUri;
+        this.logoUri = logoUri;
+        this.amIguest = amIguest;
     }
 
     public static long getSerialVersionUID() {
@@ -60,6 +66,30 @@ public class SingleEvent implements Serializable {
         return imageUri;
     }
 
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public Boolean getAmIguest() {
+        return amIguest;
+    }
+
+    public void setAmIguest(Boolean amIguest) {
+        this.amIguest = amIguest;
+    }
+
+    public String getLogoUri() {
+        return logoUri;
+    }
+
+    public void setLogoUri(String logoUri) {
+        this.logoUri = logoUri;
+    }
+
     @Override
     public String toString() {
         return "SingleEvent{" +
@@ -69,7 +99,10 @@ public class SingleEvent implements Serializable {
                 ", address='" + address + '\'' +
                 ", date=" + date +
                 ", description='" + description + '\'' +
-                ", imageUri=" + imageUri +
+                ", price='" + price + '\'' +
+                ", imageUri='" + imageUri + '\'' +
+                ", logoUri='" + logoUri + '\'' +
+                ", amIguest=" + amIguest +
                 '}';
     }
 }

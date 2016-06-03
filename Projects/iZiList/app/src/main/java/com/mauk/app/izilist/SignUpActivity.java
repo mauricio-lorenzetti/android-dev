@@ -47,6 +47,7 @@ public class SignUpActivity extends BaseActivity {
                         @Override
                         public void done(ParseException e) {
                             if (e == null) {
+                                MainApplication.updateParseInstalation(ParseUser.getCurrentUser());
                                 Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
