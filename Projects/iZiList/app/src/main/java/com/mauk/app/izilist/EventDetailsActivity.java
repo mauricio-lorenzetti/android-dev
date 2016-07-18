@@ -27,8 +27,10 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.squareup.picasso.Picasso;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Mauk on 01/11/2015.
@@ -63,7 +65,7 @@ public class EventDetailsActivity extends BaseActivity {
         price = (TextView) findViewById(R.id.price);
         checkBtn = (Button) findViewById(R.id.check_button);
 
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat df = SimpleDateFormat.getDateInstance("dd/MM", Locale.getDefault());
 
         hostname.setText(event.getHostname());
         date.setText(event.getDate() != null ? df.format(event.getDate()) : null);
@@ -100,58 +102,18 @@ public class EventDetailsActivity extends BaseActivity {
                                             public void done(ParseException e) {
                                                 if (e == null) {
                                                     checkBtn.setBackgroundColor(ContextCompat.getColor(EventDetailsActivity.this, R.color.colorAccent));
-                                                    checkBtn.setText("nome adicionado!!");
-                                                    Toast.makeText(getBaseContext(), "seu nome foi adicionado à lista\n Boa festa!!", Toast.LENGTH_SHORT).show();
+                                                    checkBtn.setText(R.string.name_added_button_label);
+                                                    Toast.makeText(getBaseContext(), R.string.name_added_message, Toast.LENGTH_SHORT).show();
                                                     event.setAmIguest(true);
                                                 } else {
-                                                    Toast.makeText(getBaseContext(), "há um problema em sua conexão, tente novamente mais tarde", Toast.LENGTH_LONG).show();
-                                                    checkBtn.setText("colocar nome na lista");
+                                                    Toast.makeText(getBaseContext(), R.string.there_is_a_problem_message, Toast.LENGTH_LONG).show();
+                                                    checkBtn.setText(R.string.in_list_button_label);
                                                     checkBtn.setBackgroundColor(ContextCompat.getColor(EventDetailsActivity.this, R.color.listUnchecked));
                                                 }
                                             }
                                         });
                                     }
                                 });
-
-                                /*
-                                ParseRelation<ParseObject> eventRelation = parseEvent.getRelation("guests");
-                                List<ParseObject> guests = eventRelation.getQuery().find();
-                                Log.v(TAG, guests.contains(currentUser.getObjectId()) ? "tem " + currentUser.get("fullName") + " na lista" : "nao tem " + currentUser.get("fullName") + " na lista");
-                                if (!guests.contains(currentUser.getObjectId())) {
-                                    eventRelation.add(currentUser);
-                                    Log.v(TAG, "adicionou " + currentUser.get("fullName"));
-                                    parseEvent.saveInBackground(new SaveCallback() {
-                                        @Override
-                                        public void done(ParseException e) {
-                                            if (e == null) {
-                                                checkBtn.setBackgroundColor(ContextCompat.getColor(EventDetailsActivity.this, R.color.colorAccent));
-                                                checkBtn.setText("nome adicionado!!");
-                                                Toast.makeText(getBaseContext(), "seu nome foi adicionado à lista\n Boa festa!!", Toast.LENGTH_SHORT).show();
-                                                event.setAmIguest(true);
-                                            } else {
-                                                Toast.makeText(getBaseContext(), "há um problema em sua conexão, tente novamente mais tarde", Toast.LENGTH_LONG).show();
-                                                checkBtn.setText("colocar nome na lista");
-                                            }
-                                        }
-                                    });
-                                } else {
-                                    eventRelation.remove(currentUser);
-                                    Log.v(TAG, "removeu " + currentUser.get("fullName"));
-                                    parseEvent.saveInBackground(new SaveCallback() {
-                                        @Override
-                                        public void done(ParseException e) {
-                                            if (e == null) {
-                                                checkBtn.setBackgroundColor(ContextCompat.getColor(EventDetailsActivity.this, R.color.listUnchecked));
-                                                checkBtn.setText("colocar nome na lista");
-                                                Toast.makeText(getBaseContext(), "seu nome foi removido dessa lista", Toast.LENGTH_SHORT).show();
-                                                event.setAmIguest(false);
-                                            } else {
-                                                Toast.makeText(getBaseContext(), "há um problema em sua conexão, tente novamente mais tarde", Toast.LENGTH_LONG).show();
-                                                checkBtn.setText("colocar nome na lista");
-                                            }
-                                        }
-                                    });
-                                }*/
                             } else {
                                 ParseQuery<ParseObject> query = ParseQuery.getQuery("Event");
                                 query.getInBackground(event.getId(), new GetCallback<ParseObject>() {
@@ -164,13 +126,13 @@ public class EventDetailsActivity extends BaseActivity {
                                             @Override
                                             public void done(ParseException e) {
                                                 if (e == null) {
-                                                    Toast.makeText(getBaseContext(), "seu nome foi removido", Toast.LENGTH_SHORT).show();
-                                                    checkBtn.setText("colocar nome na lista");
+                                                    Toast.makeText(getBaseContext(), R.string.name_removed_message, Toast.LENGTH_SHORT).show();
+                                                    checkBtn.setText(R.string.in_list_button_label);
                                                     checkBtn.setBackgroundColor(ContextCompat.getColor(EventDetailsActivity.this, R.color.listUnchecked));
                                                     event.setAmIguest(false);
                                                 } else {
-                                                    Toast.makeText(getBaseContext(), "há um problema em sua conexão, tente novamente mais tarde", Toast.LENGTH_LONG).show();
-                                                    checkBtn.setText("colocar nome na lista");
+                                                    Toast.makeText(getBaseContext(), R.string.there_is_a_problem_message, Toast.LENGTH_LONG).show();
+                                                    checkBtn.setText(R.string.in_list_button_label);
                                                     checkBtn.setBackgroundColor(ContextCompat.getColor(EventDetailsActivity.this, R.color.listUnchecked));
                                                 }
                                             }
@@ -179,8 +141,8 @@ public class EventDetailsActivity extends BaseActivity {
                                 });
                             }
                         } else {
-                            Toast.makeText(getBaseContext(), "há um problema em sua conexão, tente novamente mais tarde", Toast.LENGTH_LONG).show();
-                            checkBtn.setText("colocar nome na lista");
+                            Toast.makeText(getBaseContext(), R.string.there_is_a_problem_message, Toast.LENGTH_LONG).show();
+                            checkBtn.setText(R.string.in_list_button_label);
                             checkBtn.setBackgroundColor(ContextCompat.getColor(EventDetailsActivity.this, R.color.listUnchecked));
                         }
                     }

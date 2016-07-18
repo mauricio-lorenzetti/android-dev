@@ -16,4 +16,9 @@
     <string name="date_title">Data e Hora</string>
     <string name="place_title">Local</string>
     <string name="action_search">Search</string>
+    <string name="in_list_button_label">colocar nome na lista</string>
+    <string name="there_is_a_problem_message">há um problema em sua conexão, tente novamente mais tarde</string>
+    <string name="name_added_button_label">nome adicionado!!</string>
+    <string name="name_added_message">seu nome foi adicionado à lista\n Boa festa!!</string>
+    <string name="name_removed_message">seu nome foi removido</string>
 </resources>
